@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryusei4MK | Fullstack Programmer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #111111;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+      background-size: 30px 30px;
+      background-attachment: fixed;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      transition: background-color 2s ease;
+    }
+
+    /* Intro Page Styles */
+    #intro {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+
+    /* Novel Style Font for "Do you wish to enter?" */
+    .intro-text {
+      font-family: 'Merriweather', serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      color: white;
+      -webkit-background-clip: text;
+      background-clip: text;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Remove black color on hover */
+    .intro-text:hover {
+      transform: scale(1.2);
+    }
+
+    /* Main Content Fade-In Effect */
+    #main-content {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    /* Profile Picture Styles */
+    .profile-pic {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+      box-shadow: 0 0 5px 2px black;
+      opacity: 1;
+      transition: opacity 1s ease, transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.2);
+    }
+
+    /* Header styles */
+    .header-text {
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Hover Effect for Header Text */
+    .header-text:hover {
+      transform: scale(1.1);
+    }
+
+    /* Hover Effect for the Elements (Projects, Commission, Games, etc.) */
+    .hover-zoom:hover {
+      transform: scale(1.05); /* Increases the size by 5% */
+    }
+
+    /* Transition for smooth zooming */
+    .hover-zoom {
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-white font-sans">
+
+  <!-- Intro Page -->
+  <div id="intro">
+    <div class="intro-text" onclick="enterSite()">Do you wish to enter?</div>
+  </div>
+
+  <!-- Main Content (Initially Hidden) -->
+  <div id="main-content">
+    <!-- Hero -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+      <p class="text-xl italic stroke-text mb-4">
+        <span id="typewriter" class="typewriter"></span>
+      </p>
+
+      <div class="mb-4">
+        <img id="profilePic" src="https://i.pinimg.com/736x/fd/4e/2d/fd4e2d472dda0ba5648c12a2b8dc12a4.jpg" alt="Ryusei4MK" class="profile-pic mx-auto">
+      </div>
+
+      <h1 id="headerText" class="text-6xl font-extrabold mb-4 transition-transform duration-300 hover:scale-110 hover:text-yellow-300 header-text">
+        Ryusei4MK
+      </h1>
+      <p class="text-xl text-gray-300 mb-6">Fullstack Programmer</p>
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg max-w-md w-full hover-zoom">
+        <h2 class="text-2xl font-semibold mb-2 text-left">Skills</h2>
+        <ul class="list-disc list-inside text-gray-300 space-y-1 text-left">
+          <li>All kinds of smooth combat systems.</li>
+          <li>Complex Backend Systems.</li>
+          <li>All kinds of Skills.</li>
+          <li>Intermediate VFX.</li>
+        </ul>
+      </div>
+    </section>
+
+<!-- About Section -->
+<section class="max-w-2xl mx-auto px-4 py-16 text-center">
+  <h2 class="text-3xl font-semibold mb-4">About Me</h2>
+  <p class="text-gray-400 leading-relaxed">
+    Hey! I'm Ryusei4MK. I'm a Fullstack Programmer with a focus on making CC Games. I specialize in creating dynamic and smooth combat. I also specialize in Complex Backend Structures.
+  </p>
+</section>
+
+<!-- Commissions Section -->
+<section class="bg-gray-900 py-16 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-4">Commission Information & Pricing</h2>
+
+    <p class="text-gray-400 mb-8">I am currently open for commissions. Here's a breakdown of my pricing and policies:</p>
+
+    <!-- Pricing Section with Centering -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6 text-left hover-zoom">
+      <h3 class="text-2xl font-semibold mb-4 text-center">Pricing</h3> <!-- Centered header -->
+      <ul class="list-disc list-inside text-gray-300 space-y-2 text-center">
+        <li><strong>Minimum Price per Script:</strong> $25 USD / 12,000 Robux minimum tax.</li>
+        <li><strong>Skill or Move Pricing:</strong> Prices vary based on complexity:</li>
+        <ul class="list-inside text-gray-300 space-y-2 ml-6">
+          <li><strong>Combat Mechanics:</strong> Starting from $200 USD (depends on the number of mechanics).</li>
+          <li><strong>Movement Mechanics:</strong> Starting from $80 USD (depends on the number of mechanics).</li>
+        </ul>
+        <li><strong>Note:</strong> I do not accept commissions based on percentages unless I see significant potential in the game.</li>
+      </ul>
+    </div>
+
+    <!-- Payment Methods Section with Centering -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6 hover-zoom">
+      <h3 class="text-2xl font-semibold mb-4 text-center">Payment Methods</h3> <!-- Centered header -->
+      <ul class="list-disc list-inside text-gray-300 space-y-2 text-center">
+        <li>Cash App</li>
+        <li>PayPal</li>
+        <li>Venmo</li>
+      </ul>
+    </div>
+
+    <!-- Additional Notes Section with Centering -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-left hover-zoom">
+      <h3 class="text-2xl font-semibold mb-4 text-center">Additional Notes</h3> <!-- Centered header -->
+      <ul class="list-disc list-inside text-gray-300 space-y-2 text-center">
+        <li><strong>Showcasing Credit:</strong> If you’re showcasing any work I’ve done for you (e.g., sneak peeks or public posts), please give credit for the scripting used.</li>
+        <li><strong>Commission Refusal:</strong> I reserve the right to refuse commissions if I feel that I’m not the right fit for the project or if I’m not interested. I may also block you if you’re excessively persistent.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Carousel Section -->
+<section class="bg-gray-900 py-16 px-4 relative">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-8 text-center">Projects</h2>
+    
+    <div class="relative">
+      <!-- Left Arrow -->
+      <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-gray-700 p-2 rounded-full hover:bg-gray-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <!-- Right Arrow -->
+      <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-gray-700 p-2 rounded-full hover:bg-gray-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      <!-- Carousel Container -->
+      <div id="carousel" class="flex overflow-x-auto space-x-6 scroll-smooth scrollbar-hide">
+        <!-- Project Cards -->
+        <!-- Repeat this div per project -->
+        <div class="min-w-[300px] flex-shrink-0 bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+          <h3 class="text-xl font-semibold mb-2">Tensei</h3>
+          <p class="text-gray-300 text-sm mb-2">Magic RPG Game based on The Beginning After The End.</p>
+          <a href="https://medal.tv/games/roblox/clips/kbLLX9Xt4v5gmKl_P?invite=cr-MSwzTVEsMjYzNTI0MDc0" target="_blank" class="text-indigo-400 hover:underline">Watch Clip</a>
+        </div>
+
+        <div class="min-w-[300px] flex-shrink-0 bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+          <h3 class="text-xl font-semibold mb-2">Bleach Cero</h3>
+          <a href="https://medal.tv/games/roblox/clips/jTBepgqaK6IW1rJfi?invite=cr-MSxpWEcsMjYzNTI0MDc0" target="_blank" class="text-indigo-400 hover:underline">Watch Clip</a>
+        </div>
+
+        <div class="min-w-[300px] flex-shrink-0 bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+          <h3 class="text-xl font-semibold mb-2">Fire Skill</h3>
+          <a href="https://medal.tv/games/roblox/clips/jSESz7FzZDRk9nylP?invite=cr-MSxNa0wsMjYzNTI0MDc0" target="_blank" class="text-indigo-400 hover:underline">Watch Clip</a>
+        </div>
+
+        <div class="min-w-[300px] flex-shrink-0 bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+          <h3 class="text-xl font-semibold mb-2">Hadouken</h3>
+          <p class="text-gray-300 text-sm mb-2">Playing around with Environmental Destruction.</p>
+          <a href="https://medal.tv/games/roblox-studio/clips/jRSnMfcvOew7IJT8E?invite=cr-MSxKZ2csMjYzNTI0MDc0" target="_blank" class="text-indigo-400 hover:underline">Watch Clip</a>
+        </div>
+
+        <div class="min-w-[300px] flex-shrink-0 bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+          <h3 class="text-xl font-semibold mb-2">Simple Gender Choosing UI Scripted.</h3>
+          <a href="https://medal.tv/games/roblox-studio/clips/jPa879qWiz1XFpvt4?invite=cr-MSxyRzUsMjYzNTI0MDc0LA" target="_blank" class="text-indigo-400 hover:underline">Watch Clip</a>
+        </div>
+
+        <div class="min-w-[300px] flex-shrink-0 bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+          <h3 class="text-xl font-semibold mb-2">Movement System 1</h3>
+          <a href="https://medal.tv/games/roblox/clips/k2HpdznAkT9jO0h1k?invite=cr-MSw0eE8sMjYzNTI0MDc0" target="_blank" class="text-indigo-400 hover:underline">Watch Clip</a>
+        </div>
+
+        <div class="min-w-[300px] flex-shrink-0 bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+          <h3 class="text-xl font-semibold mb-2">Movement System 2</h3>
+          <a href="https://medal.tv/games/roblox/clips/k2HobZf5uN8vUCU6O?invite=cr-MSxDSGMsMjYzNTI0MDc0" target="_blank" class="text-indigo-400 hover:underline">Watch Clip</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Games Contributed To Section -->
+<section class="bg-gray-900 py-16 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-4">Games Contributed To</h2>
+    <p class="text-gray-400 mb-8">Here are some of the games I've contributed to:</p>
+
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg border-2 border-white max-w-sm mx-auto hover-zoom">
+      <ul class="list-disc list-inside text-gray-300 space-y-2 text-center">
+        <li><strong>Ghoul:Re</strong></li>
+        <li><strong>Kimetsu</strong></li>
+        <li><strong>Tensei</strong></li>
+        <li><strong>Slayers</strong></li>
+        <li><strong>Beyond</strong></li>
+        <li><strong>Rise of the End</strong></li>
+        <li><strong>Dan!</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="bg-gray-950 py-16 px-4">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-4">Contact Me</h2>
+    <p class="text-gray-300 mb-4">Want to commission me or have a question?</p>
+    <p class="text-gray-400">Discord: <span class="font-mono">ryusei_dev</span></p>
+  </div>
+</section>
+
+<footer class="text-center text-gray-500 py-6 text-sm">
+  © 2025 Ryusei4MK
+</footer>
+</div>
+
+<script>
+  // Define the text to be typed
+  const texts = ["Fullstack Programmer.", "Last Survivor of the Kurta Clan."];
+  let currentTextIndex = 0;
+  let typewriterElement = document.getElementById("typewriter");
+  let profilePic = document.getElementById("profilePic");
+  let headerText = document.getElementById("headerText");
+
+  // Function for typing text effect
+  function typeText(text, callback) {
+    let index = 0;
+    typewriterElement.innerHTML = ''; // Clear previous text
+
+    function type() {
+      if (index < text.length) {
+        let letterSpan = document.createElement("span");
+        letterSpan.innerHTML = text.charAt(index);
+        typewriterElement.appendChild(letterSpan);
+        index++;
+        setTimeout(type, 100); // Set typing speed here
+      } else {
+        callback(); // Call the callback once the typing is finished
+      }
+    }
+
+    type();
+  }
+
+ function changeTextAndImage() {
+  // Fade out the profile picture before changing
+  profilePic.style.opacity = 0;
+
+  // After fade-out, change profile picture and text
+  setTimeout(() => {
+    if (currentTextIndex === 0) {
+      profilePic.src = "https://i.pinimg.com/736x/d2/a8/94/d2a8940e8c444ce776469ea1cb3ef2d6.jpg"; // Red Pfp
+      // Change background color to wine red
+      document.body.style.backgroundColor = "#3e0a1f"; // Wine red (same as Ryusei text color)
+      // Change text color to red when background is red
+      headerText.style.color = "#d91c30"; // Wine red color (match text color)
+    } else {
+      profilePic.src = "https://i.pinimg.com/736x/fd/4e/2d/fd4e2d472dda0ba5648c12a2b8dc12a4.jpg"; // Ryusei's pfp
+      // Reset background color to default dark background
+      document.body.style.backgroundColor = "#111111"; // Default dark background
+      // Reset text color to white
+      headerText.style.color = "white"; // Reset header text to white
+    }
+
+    // Fade in after changing the image
+    profilePic.style.opacity = 1;
+
+    // Switch to the next text
+    currentTextIndex = (currentTextIndex + 1) % texts.length;
+    typeText(texts[currentTextIndex], () => {
+      setTimeout(() => {
+        // Switch text after a delay
+        changeTextAndImage(); // Continue the loop
+      }, 1000);
+    });
+  }, 1000);
+}
+
+  // Function that will execute when you click on "Do you wish to enter?"
+ function enterSite() {
+    document.getElementById("intro").style.display = "none"; // Hide the intro
+    document.getElementById("main-content").style.display = "block"; // Show the main content
+    setTimeout(() => {
+      document.getElementById("main-content").style.opacity = 1; // Fade in effect
+      typeText(texts[currentTextIndex], () => {
+        setTimeout(() => {
+          changeTextAndImage(); // Start the text/image change
+        }, 1000);
+      });
+    }, 1000); // Delay for fade-in effect
+  }
+
+  // Ensure the main content is hidden initially on page load
+  window.onload = function () {
+    document.getElementById("main-content").style.opacity = 0; // Set opacity to 0 initially
+  };
+</script>
+
+
+</body>
+</html>
